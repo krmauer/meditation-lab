@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "TXM984C69B.com.meditationlab.app",
-        "paths": ["/reset-password", "/auth/callback"]
+        "paths": ["/reset-password", "/auth/callback", "/j/*"]
       }
     ]
   }

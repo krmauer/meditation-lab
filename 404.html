@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Meditation Lab</title>
+  <style>
+    body { font-family: sans-serif; display: flex; flex-direction: column;
+           align-items: center; justify-content: center; min-height: 100vh; margin: 0;
+           padding: 24px; box-sizing: border-box; color: #111; text-align: center; }
+    h1 { font-size: 22px; margin: 0 0 12px; }
+    p { color: #444; line-height: 1.5; margin: 0 0 24px; max-width: 420px; }
+    .button { display: inline-block; background: #111; color: #fff; padding: 16px 32px;
+              border-radius: 8px; text-decoration: none; font-size: 16px; margin: 0 0 12px;
+              border: 0; cursor: pointer; font-family: inherit; }
+    .secondary { background: #fff; color: #111; border: 1px solid #111; }
+    .note { font-size: 14px; color: #666; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Invite page: shown for /j/<token> when the app is not installed (or the link opened in a browser). -->
+  <main id="invite" hidden>
+    <h1>You've been invited to a circle on Meditation Lab</h1>
+    <p>Open the invite in the app. If you don't have the app yet, download it first, then tap the invite link again.</p>
+    <button type="button" class="button" id="open">Open in the app</button>
+    <a class="button secondary" id="download" href="" hidden>Download (TestFlight)</a>
+    <p class="note" id="no-download" hidden>The app is in testing. Ask the person who invited you for the TestFlight link.</p>
+  </main>
+
+  <!-- Everything else. -->
+  <main id="notfound" hidden>
+    <h1>Page not found</h1>
+    <p><a href="/">Meditation Lab</a></p>
+  </main>
+
+  <script>
+    // Korey: paste the public TestFlight link here once it exists (K11), e.g. 'https://testflight.apple.com/join/XXXXXXXX'.
+    // #131 later switches this to the App Store link and adds the Smart App Banner.
+    var TESTFLIGHT_PUBLIC_LINK = '';
+
+    // Same pattern the app accepts (lib/deepLink.js): /j/<token>, letters, digits and hyphens.
+    var INVITE_PATH = /^\/j\/([A-Za-z0-9-]+)\/?$/;
+
+    // Rules (#130): the token is never written into the page's HTML or text; it is read from
+    // location only when "Open in the app" is tapped. No circle name or question, ever.
+    // No third-party scripts. No referrer.
+    if (INVITE_PATH.test(location.pathname)) {
+      document.getElementById('invite').hidden = false;
+      document.getElementById('open').addEventListener('click', function () {
+        var m = location.pathname.match(INVITE_PATH);
+        if (m) location.href = 'meditationlab://j/' + m[1];
+      });
+      if (TESTFLIGHT_PUBLIC_LINK) {
+        var d = document.getElementById('download');
+        d.href = TESTFLIGHT_PUBLIC_LINK;
+        d.hidden = false;
+      } else {
+        document.getElementById('no-download').hidden = false;
+      }
+    } else {
+      document.getElementById('notfound').hidden = false;
+    }
+  </script>
+</body>
+</html>
