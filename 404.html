@@ -30,6 +30,15 @@
     <p class="note" id="no-download" hidden>The app is in testing. Ask the person who invited you for the TestFlight link.</p>
   </main>
 
+  <!-- Program link page: shown for /p/<slug> when the app is not installed (or the link opened in a browser).
+       Copy: SPEC §12.28.5 (§K), verbatim. -->
+  <main id="program" hidden>
+    <h1>A circle on Meditation Lab</h1>
+    <p>Open this in the Meditation Lab app to start the circle.</p>
+    <button type="button" class="button" id="open-program">Open in the app</button>
+    <p class="note">Don't have it yet? Ask the person who sent you this for an invite.</p>
+  </main>
+
   <!-- Everything else. -->
   <main id="notfound" hidden>
     <h1>Page not found</h1>
@@ -43,6 +52,9 @@
 
     // Same pattern the app accepts (lib/deepLink.js): /j/<token>, letters, digits and hyphens.
     var INVITE_PATH = /^\/j\/([A-Za-z0-9-]+)\/?$/;
+
+    // Same pattern the app accepts (#430, lib/notificationRouting.js): /p/<slug>, lowercase letters, digits and hyphens.
+    var PROGRAM_PATH = /^\/p\/([a-z0-9-]+)\/?$/;
 
     // Rules (#130): the token is never written into the page's HTML or text; it is read from
     // location only when "Open in the app" is tapped. No circle name or question, ever.
@@ -60,6 +72,14 @@
       } else {
         document.getElementById('no-download').hidden = false;
       }
+    } else if (PROGRAM_PATH.test(location.pathname)) {
+      // Same rules as the invite page: no program data is fetched or shown (the catalog is live
+      // data and this page stays static); the slug is read from location only on the tap.
+      document.getElementById('program').hidden = false;
+      document.getElementById('open-program').addEventListener('click', function () {
+        var m = location.pathname.match(PROGRAM_PATH);
+        if (m) location.href = 'meditationlab://p/' + m[1];
+      });
     } else {
       document.getElementById('notfound').hidden = false;
     }
