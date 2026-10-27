@@ -26,7 +26,7 @@
 <body>
 
   <h1>Meditation Lab Privacy Policy</h1>
-  <p class="meta">Last updated: 8 October 2026 · Meditation Lab beta</p>
+  <p class="meta">Last updated: 27 October 2026 · Meditation Lab beta</p>
 
   <p>
     Meditation Lab is a journal you can keep alone or share with a few people in a circle. This page says
@@ -37,107 +37,125 @@
 
   <div class="short">
     <p><strong>The short version</strong></p>
-    <ul>
-      <li>We don't sell your data, show ads, or track you across other apps.</li>
-      <li>The text of your <strong>non-private</strong> entries is sent to Anthropic's AI (Claude) to name
-          your entries, recap your days and answer circle questions.
-          <strong>Private entries are never sent to any AI.</strong></li>
-      <li>Neither we nor Anthropic train AI models on your journal.</li>
-      <li>Circles see only what you share with them. You can take a post back at any time.</li>
-      <li>You can delete your account in the app. Answers you gave in a Topic Circle stay in that circle
-          under your first name. Everything else is deleted.</li>
-    </ul>
+    <p>
+      We don't sell your data, show ads, or track you across other apps. To name and sort what you write,
+      safety-check what you share, and turn your voice into text, Meditation Lab sends it to two AI services:
+      Claude, run by Anthropic, and OpenAI. <strong>Entries you mark Private are never sent to any AI.</strong>
+      You can delete any entry, or your whole account, in the app.
+    </p>
   </div>
 
   <h2>1. What we keep</h2>
   <ul>
-    <li><strong>Account:</strong> your email, name, password (stored only as a secure hash), time zone and
+    <li><strong>Your account:</strong> email, first and last name, a hashed password, time zone and
         settings.</li>
-    <li><strong>Journal:</strong> your entries, when you wrote them, whether each is private, and what the
-        app makes from them (names, daily recaps, circle answers).</li>
-    <li><strong>Circles:</strong> the circles you're in, their questions, the posts shared there, and
-        reports or blocks you make.</li>
-    <li><strong>Notifications:</strong> a push token for your phone, if you allow notifications.</li>
-    <li><strong>Crash reports</strong> (section 5).</li>
+    <li><strong>What you write:</strong> your entries and their titles, and what the AI writes about them (the
+        day's name and recap, which circles an entry fits, and the pages and summaries some features build for
+        you).</li>
+    <li><strong>Voice notes:</strong> the text, including the unedited transcript, and how long the note was.
+        We don't keep the recording: it is sent to be transcribed and then discarded. If sending fails, the
+        recording stays on your phone until you retry or discard it.</li>
+    <li><strong>Circles:</strong> which circles you're in, what you share there, comments on posts, and direct
+        messages between members.</li>
+    <li><strong>Safety:</strong> reports, blocks, and the result of the automatic safety check on what you
+        share.</li>
+    <li><strong>Notifications:</strong> a push token, if you allow notifications.</li>
+    <li><strong>Crash reports,</strong> scrubbed of anything you write.</li>
+    <li><strong>Usage analytics:</strong> which screens and buttons are used, linked to your account but never
+        containing your writing, titles or circle names. On by default; you can turn it off in Settings
+        ("Share usage analytics").</li>
   </ul>
-  <p>We don't collect your location, contacts, photos or advertising identifiers. Unfinished drafts stay on
-     your phone and are never sent to us.</p>
+  <p>We don't collect your location, contacts, photos or advertising identifier. Drafts you haven't sent stay
+     on your phone, including after you sign out, and the app keeps a copy of recent pages on your phone until
+     you sign out.</p>
 
   <h2>2. The AI</h2>
-  <p>
-    Meditation Lab uses Claude, an AI service run by Anthropic. The text of a non-private entry is sent to it
-    when you save the entry, and again once a day to recap your day and write any circle answers. Each circle
-    post is also sent to it for an automatic safety check before anyone can read it.
-  </p>
-  <p>
-    <strong>Private entries are never sent to any AI.</strong> You choose private when you write an entry,
-    and it can't be changed afterwards.
-  </p>
-  <p>
-    Under its commercial terms, Anthropic doesn't train its models on what we send and keeps it only for a
-    limited time. We don't train AI models on your journal either. If that ever changes, we'll ask you first.
-  </p>
-  <p>
-    <strong>During the beta</strong>, the person who runs Meditation Lab may read a sample of non-private
-    entries next to what the AI made of them, to improve the AI's quality. Private entries are never read.
-    Apart from that, we look at your content only to act on a report, to fix a problem you ask us about,
-    or when the law requires it.
-  </p>
-
-  <h2>3. Circles</h2>
   <ul>
-    <li>A <strong>Life Circle</strong> sees your day's name and recap. A <strong>Topic Circle</strong> sees
-        the AI's answer to its question, on days when your writing answers it.</li>
-    <li>Your own words are shared only if you turn on <em>Include my own words</em> for that circle.</li>
-    <li>Members see your first name.</li>
-    <li>A post someone has received stays with them, even after they leave the circle.</li>
-    <li><strong>You can take a post back</strong> at any time: long-press it and choose Retract. It then
-        disappears for everyone, including people who have left the circle.</li>
+    <li><strong>Claude (Anthropic)</strong> names your entries, writes your day's name and recap, tidies up
+        voice-note transcripts, decides which circles an entry fits, writes circle posts and prompts, builds
+        pages written for you, and safety-checks what you share in circles.</li>
+    <li><strong>OpenAI</strong> turns your voice into text. Some features also turn entries into embeddings —
+        lists of numbers the app uses to find related entries.</li>
   </ul>
+  <p>
+    The text of a non-private entry is sent when you save it, and again when you edit it or when a feature
+    that uses it runs (a recap, a page, a circle post). <strong>Entries you mark Private are never sent to any
+    AI.</strong> Speak turns your voice into text as you talk, so choose Private before you start speaking.
+  </p>
+  <p>
+    Neither service trains its models on what we send. Anthropic deletes it within 30 days, or keeps it up to
+    two years if its safety systems flag it. OpenAI keeps nothing from transcription and keeps embedding
+    requests for 30 days for abuse monitoring.
+  </p>
+  <p>You agree to this when you accept the terms; the terms screen names both services.</p>
+
+  <h2>3. Circles, comments and messages</h2>
+  <ul>
+    <li><strong>Circles see only what you share with them.</strong> Most circles show an AI-written post drawn
+        from your entries. If you turn on <em>Include my own words</em> for a circle, it gets your whole entry.
+        In a prompt circle, your answer is shared as you wrote it, after a safety check.</li>
+    <li><strong>Comments</strong> are seen by the circle's members. They're checked automatically after
+        they're posted, and a flagged comment is held back until you decide.</li>
+    <li><strong>Direct messages</strong> are seen only by you and the person you're writing to. They're stored
+        on our servers and aren't end-to-end encrypted. They're never checked automatically or sent to any
+        AI.</li>
+    <li>You can take back a post at any time; people who already saw it may have read it. Once you take it
+        back, its comments can't be seen by anyone. Deleting a comment hides it for everyone. Deleting a direct
+        message removes your copy; the other person keeps theirs.</li>
+    <li>Anyone can report a post, comment or message, or block another person. We review reports within 24
+        hours.</li>
+  </ul>
+  <p>
+    <strong>When we read what you wrote:</strong> only when someone reports it. A report shows us the reported
+    message and the five before it in that conversation. Our encrypted backups (section 4) hold everything,
+    Private entries included, and are opened only to restore the service after a failure.
+  </p>
 
   <h2>4. Deleting things</h2>
   <ul>
-    <li><strong>An entry</strong> disappears from the app at once, and any post made from it is withdrawn.
-        Its text is erased from our database within 30 days.</li>
-    <li><strong>Your account</strong> (Settings → Account → Delete account): your account, entries, recaps,
-        settings and Life Circle posts are deleted. <strong>Topic Circle answers stay</strong> in those
-        circles under your first name, because they were part of a group conversation. Retract them first
-        if you don't want that.</li>
-    <li>Our database provider's backups are deleted automatically on a rolling schedule.</li>
+    <li><strong>An entry:</strong> gone from the app at once. Its text is erased from our database 30 days
+        later. A prompt-circle answer keeps its text until you take the post back.</li>
+    <li><strong>Your account</strong> (Settings → Account → Delete account): removes your account, your
+        entries, your Life Circle posts and their comments, and every direct-message conversation you were in,
+        for both people. What you shared in question and prompt circles, and your comments, stay in those
+        circles under your first name.</li>
+    <li><strong>Backups:</strong> we keep encrypted copies of the database, the last ten, so we can recover
+        from a failure. A deleted entry leaves the backups as newer copies replace older ones.</li>
   </ul>
 
   <h2>5. Services we use</h2>
   <ul>
-    <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase</a>: database, sign-in
-        and sign-in.</li>
-    <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend</a>: sending
-        sign-up and password emails, so it receives your email address.</li>
+    <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase</a>: our database and
+        sign-in (US).</li>
     <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>: the
-        AI (section 2).</li>
-    <li><a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a> and Apple: notifications.
-        A notification can include your day's name, a person's first name or a circle's name.</li>
-    <li><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry</a>: crash reports
-        (phone model, app version and what went wrong in the code). Reports are stripped of everything you
-        write or read in the app and don't include your email.</li>
-    <li>Apple TestFlight: if you send beta feedback through TestFlight, Apple shares it with us.</li>
+        Claude AI service.</li>
+    <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI</a>: voice
+        transcription and embeddings.</li>
+    <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend</a>: sign-up and
+        password emails.</li>
+    <li><a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a> and Apple: app updates and
+        notifications (a notification can show a circle's name and a member's first name).</li>
+    <li><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry</a>: crash reports, scrubbed
+        of your writing.</li>
+    <li><a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog</a>: usage analytics (US),
+        unless you turn it off.</li>
+    <li>Apple TestFlight: beta distribution.</li>
   </ul>
-  <p>These services may process data in the United States and other countries. We share data only with
-     them, only to run the app, and never for advertising.</p>
+  <p>Your data may be processed in the US and other countries. We share it with these services only to run
+     the app.</p>
 
   <h2>6. Security</h2>
-  <p>Data travels over encrypted connections and is encrypted at rest. Database rules stop one account
-     from reading another's journal, and circle posts can be read only by that circle's members.</p>
+  <p>Data is encrypted in transit and at rest. Database rules keep each account's data separate. Your sign-in
+     is stored in the iOS Keychain, and you can lock the app with Face ID.</p>
 
   <h2>7. Your rights and age</h2>
-  <p>You can delete entries and your account in the app. To get a copy of your data, correct it or ask
-     anything else, email us. Depending on where you live, you may have further rights, including
-     complaining to your local data-protection authority.</p>
-  <p>Meditation Lab is for people 18 and over.</p>
+  <p>You can delete entries and your account in the app, and ask for a copy of your data by emailing us.
+     Depending on where you live, you can also complain to a data-protection authority.</p>
+  <p><strong>Meditation Lab is for people 18 and over.</strong></p>
 
   <h2>8. Changes and contact</h2>
-  <p>Meditation Lab is in beta and will change. If this policy changes in a way that matters, we'll tell you
-     in the app before the change takes effect.</p>
-  <p>Questions or requests: <a href="mailto:support@meditationlab.co">support@meditationlab.co</a></p>
+  <p>If this policy changes in a way that matters, we'll tell you in the app before it takes effect.</p>
+  <p>Contact: <a href="mailto:support@meditationlab.co">support@meditationlab.co</a></p>
 
 </body>
 </html>
